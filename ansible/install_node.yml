@@ -1,0 +1,16 @@
+---
+- name: Install Node.js and npm
+  hosts: web
+  become: yes
+  tasks:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+
+    - name: Install Node.js and npm
+      apt:
+        name:
+          - nodejs
+          - npm
+        state: present
+
